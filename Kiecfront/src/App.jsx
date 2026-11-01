@@ -31,7 +31,9 @@ export default function App() {
   return (
     <div className="app">
       <Navbar page={page} setPage={setPage} user={user} setUser={setUser} />
-      <main className="page-content">
+      <main
+        className={`page-content${page === 'home' ? ' page-content-home' : ''}`}
+      >
         {page === 'home' && <Home setPage={setPage} />}
         {page === 'login' && <Login setPage={setPage} setUser={setUser} />}
         {page === 'register' && <Register setPage={setPage} setUser={setUser} />}
